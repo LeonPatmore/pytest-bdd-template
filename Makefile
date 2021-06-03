@@ -12,4 +12,8 @@ runDocker: buildDocker  ## Run the docker image.
 	docker run pytest-bdd:latest
 
 run: buildLocal  ## Run tests locally.
-	pipenv run python -m pytest --alluredir=./results/my_allure_results
+	pipenv run python -m pytest --alluredir=./results --clean-alluredir
+
+allure:  ## Start allure to render pretty reports.
+	docker run -it -p 5050\:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY=1 -v `pwd`/results\:/app/allure-results -v `pwd`/reports\:/app/default-reports frankescobar/allure-docker-service
+

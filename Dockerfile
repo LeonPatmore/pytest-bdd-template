@@ -7,3 +7,4 @@ COPY features features
 COPY tests tests
 
 ENTRYPOINT ["pipenv", "run", "python", "-m", "pytest"]
+CMD ["--alluredir=./results", "--clean-alluredir"]
