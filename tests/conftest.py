@@ -1,5 +1,8 @@
 import glob
+import logging
 import os
+
+logging.root.setLevel(logging.DEBUG)
 
 # Dynamically loads fixtures from all python files.
 pytest_modules = list()
