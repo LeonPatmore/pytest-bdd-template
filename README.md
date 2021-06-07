@@ -42,4 +42,24 @@ Run: `make runDocker`
 
 ## Reporting
 
+Reporting is done via Allure with a pytest BDD integration.
 
+### How it Works
+
+1. Running a test will generate JSON results files into `./results`.
+
+2. Run Allure over `./results` folder to generate output HTML reports in `./reports`.
+
+### Running Allure on Results
+
+There are two ways to generate the Allure HTML report:
+
+1. Use the Allure CLI.
+
+2. Run allure docker service: `make allure`. This automatically checks for new results
+and generates reports for them. **Best for local testing.**
+
+## Logging
+
+- Passing tests will not log.
+- Failing tests will log debug.

@@ -2,7 +2,7 @@
 [packages]
 pytest = "*"
 pytest-bdd = "*"
-allure-pytest = "*"
+allure-pytest-bdd = "*"
 
 [requires]
 python_version = "3"
